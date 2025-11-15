@@ -1,6 +1,6 @@
-# comission_shop
+# Flutter-App-Development
 
-A new Flutter project.
+A new Flutter project for the Commission Shop application.
 
 ## Getting Started
 
