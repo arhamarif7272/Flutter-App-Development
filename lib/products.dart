@@ -383,7 +383,7 @@ class _PRODUCTSState extends State<PRODUCTS> {
           ),
         ],
       ),
-      drawer: const appdrawer(), // Assuming 'drawer.dart' exports 'appdrawer'
+      // drawer: const appdrawer(), // Assuming 'drawer.dart' exports 'appdrawer'
       body: ListView(
         children: [
           Container(

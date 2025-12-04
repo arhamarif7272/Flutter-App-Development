@@ -1,3 +1,4 @@
+import 'package:comission_shop/anime.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart'; // Import for Database
 import 'package:firebase_auth/firebase_auth.dart'; // Import for User ID
@@ -98,13 +99,17 @@ class _sellState extends State<sell> {
       });
 
       // Success Message
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            'Success! Listed: ${_productNameController.text} for Total: \$${_totalPriceController.text}',
-          ),
-          backgroundColor: Colors.green,
-        ),
+      // ScaffoldMessenger.of(context).showSnackBar(
+      //   SnackBar(
+      //     content: Text(
+      //       'Success! Listed: ${_productNameController.text} for Total: \$${_totalPriceController.text}',
+      //     ),
+      //     backgroundColor: Colors.green,
+      //   ),
+      // );
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const anime()),
       );
 
       // Clear the form

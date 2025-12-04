@@ -1,8 +1,11 @@
+import 'package:comission_shop/termandpolicies.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:comission_shop/login.dart'; // To navigate back on logout
 import 'package:comission_shop/drawer.dart'; // To navigate back on logout
+import 'package:comission_shop/changepassword.dart';
 
+import 'help.dart'; // To navigate back on logout
 class setting extends StatefulWidget {
   const setting({super.key});
 
@@ -276,8 +279,12 @@ class _settingState extends State<setting> {
             icon: Icons.lock_outline,
             title: "Change Password",
             onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text("Password change feature coming soon!")),
+              // ScaffoldMessenger.of(context).showSnackBar(
+              //   const SnackBar(content: Text("Password change feature coming soon!")),
+              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const changepassword()),
               );
             },
           ),
@@ -296,7 +303,39 @@ class _settingState extends State<setting> {
               );
             },
           ),
+    const SizedBox(height: 20),
+    const Text(
+    "Info",
+    style: TextStyle(color: Colors.white70, fontSize: 16, fontWeight: FontWeight.bold),
+    ),
+    const SizedBox(height: 10),
 
+    // 3. General Options
+    _buildSettingOption(
+    icon: Icons.live_help_rounded,
+    title: "Help Center",
+    iconColor: Colors.orange,
+    onTap:(){
+    Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const help()),
+    );
+    }
+    ),
+          const SizedBox(height: 10),
+
+          // 3. General Options
+          _buildSettingOption(
+              icon: Icons.description_outlined,
+              title: "Term & Policies",
+              iconColor: Colors.orange,
+              onTap:(){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const termandpolicies()),
+                );
+              }
+          ),
           const SizedBox(height: 20),
           const Text(
             "General",
@@ -318,6 +357,7 @@ class _settingState extends State<setting> {
             textColor: Colors.red,
             onTap: _deleteAccount,
           ),
+
         ],
       ),
     );

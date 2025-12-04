@@ -1,3 +1,4 @@
+import 'package:comission_shop/anime.dart';
 import 'package:flutter/material.dart';
 import 'package:comission_shop/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart'; // DB Access
@@ -121,7 +122,7 @@ class _deliveryState extends State<delivery> {
       // 5. Navigate Home after delay
       Future.delayed(const Duration(seconds: 2), () {
         Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => const homeScreen()),
+          MaterialPageRoute(builder: (context) => const anime()),
               (Route<dynamic> route) => false,
         );
       });
